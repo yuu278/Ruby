@@ -1,27 +1,46 @@
-.Header {
-    width: 100%;
-}
-.Header .Header--common {
-    box-shadow: 0px 15px 20px rgba(0,0,0,.05);
+body {
+  color: #333;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 }
 
+body{
+  margin: 0;
+  padding: 0;
+}
+
+
 .Header {
+    width: 100%;
     background-color: #ffffff;
     display: grid;
     height: 70px;
 }
 
 @media screen and (max-width: 1080px) {
-.Header {
-    position: fixed;
+  .Header {
+    background-color: #fff;
     z-index: 10;
+  }
 }
+
+
+@media screen and (max-width: 414px) {
+  .Header {
+    height: 48px;
+    padding: 0;
+  }
 }
-@media screen and (max-width: 767px) {
-.Header {
-    padding-top: 15px;
-    padding-bottom: 15px;
+
+.Header .Header--common {
+    box-shadow: 0px 15px 20px rgba(0,0,0,.05);
 }
+
+@media screen and (max-width: 1080px){
+    .Header--common{
+         position: fixed;
+    }
 }
 
 .HeaderContainer {
@@ -33,9 +52,45 @@
     position: relative;
 }
 
-.HeaderLogo {
-    height: 20px;
+
+@media screen and (max-width: 767px) {
+  .HeaderContainer {
+      max-width: 100%;
+      margin: 0 16px;
+  }
 }
+
+
+@media screen and (min-width: 768px) {
+  .HeaderLogo {
+      transition: opacity .2s;
+  }
+}
+
+.HeaderLogo__image--pc{
+    display: block;
+    height: 20px;
+    width: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .HeaderLogo__image--pc {
+        display:none;
+    }
+}
+
+.HeaderLogo__image--sp {
+    display: none;
+    height: 16px;
+    width: auto
+}
+
+@media screen and (max-width: 767px) {
+    .HeaderLogo__image--sp {
+        display:block; 
+    }
+}
+
 
 .HeaderNav {
     display: inline-flex;
@@ -43,10 +98,77 @@
     align-self: center;
 }
 
+
+@media screen and (max-width: 1080px) {
+    .list-item {
+        overflow-y:scroll;
+        position: fixed;
+        top: 60px;
+        left: 100%;
+        width: 100%;
+        display: block;
+        padding-top: 20px;
+        padding-bottom: 75px;
+        transition: transform 0.5s;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, 0.8);
+        -webkit-overflow-scrolling: touch;
+        height: 100%
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .list-item {
+        top:70px
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .list-item {
+        top:48px
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .list-item.is-active {
+        transform:translate3d(-100%, 0, 0)
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .list-item.is-scroll {
+        top:60px;
+        bottom: 0
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .list-item.is-scroll {
+        top:52px;
+        bottom: 0
+    }
+}
+
 .list-item{
     list-style: none;
     margin-right: 45px;
     padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .Header-link {
+        transition:opacity 0.2s
+    }
+
+    .Header-link:hover{
+        opacity: 0.8;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .Header-link {
+        margin-right:0
+    }
 }
 
 .Header-link {
