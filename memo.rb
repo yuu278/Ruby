@@ -37,4 +37,3 @@ end
 else
     puts "1か2を入力してください"
 end    
-   
